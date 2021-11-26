@@ -5,7 +5,7 @@ import http from 'http'
 import cors from 'cors'
 import morgan from 'morgan'
 
-import testRouter from './routes/test'
+import exampleRoutes from './routes/example'
 
 mongoose.connect('mongodb://localhost/<changeme>')
 
@@ -15,7 +15,7 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())
 
-app.use('/test', testRouter)
+app.use('/example', exampleRoutes)
 
 const port = process.env.PORT || 3090
 const server = http.createServer(app)
